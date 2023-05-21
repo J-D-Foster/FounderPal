@@ -1,4 +1,5 @@
 <script>
+console.log("Script loaded");
 document.addEventListener("DOMContentLoaded", function() {
   var cofounder1NameInput = document.getElementById('Cofounder1-Name');
   var cofounder2NameInput = document.getElementById('Cofounder2-Name');
