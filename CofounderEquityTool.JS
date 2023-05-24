@@ -1,4 +1,3 @@
-<script>
 console.log("Script loaded");
 document.addEventListener("DOMContentLoaded", function() {
   var cofounder1NameInput = document.getElementById('Cofounder1-Name');
@@ -234,8 +233,6 @@ function updatePointsForInput(inputIDPrefix, pointValue) {
 }
 
 
-
-
 updatePointsForInput('CEOCofounder', 5);
 updatePointsForInput('IdeaBoxCofounder', 5);
 updatePointsForInput('IdeasGuyBox', 3);
@@ -245,4 +242,3 @@ updatePointsForInput('PitchingBox', 5);
 updatePointsForInput('CapitalAccessBox', 10);
 });
 
-</script>
