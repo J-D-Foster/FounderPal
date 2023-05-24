@@ -79,8 +79,8 @@ var capitalAccessNo = document.getElementById('CapitalAccessBoxNo');
     });
   }
 
-function showAdditionalInputs(numCofounders) {
-  hideAllAdditionalInputs();
+  function showAdditionalInputs(numCofounders) {
+    hideAllAdditionalInputs();
   if (numCofounders >= 3) {
     cofounder3NameInput.style.display = "block";
     cofounder3NameLabel.style.display = "block";
@@ -126,7 +126,6 @@ function showAdditionalInputs(numCofounders) {
     CapitalAccessLabel4.style.display = "block";
   }
 }
-
 
 
   var isSeekingInvestmentYes = seekingInvestmentYes.checked;
