@@ -128,6 +128,7 @@ function showAdditionalInputs(numCofounders) {
 }
 
 
+
   var isSeekingInvestmentYes = seekingInvestmentYes.checked;
 
   if (numCofounders >= 3 && isSeekingInvestmentYes) {
