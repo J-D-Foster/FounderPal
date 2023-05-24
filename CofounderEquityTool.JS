@@ -1,5 +1,4 @@
 console.log("Script loaded");
-
 document.addEventListener("DOMContentLoaded", function() {
   var cofounder1NameInput = document.getElementById('Cofounder1-Name');
   var cofounder2NameInput = document.getElementById('Cofounder2-Name');
@@ -10,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
   var cofounder4NameLabel = document.getElementById('Cofounder4NameLabel');
   
   // Get the radio buttons
-  var seekingInvestmentYes = document.getElementById('SeekingInvestmentRadioYes');
-  var seekingInvestmentNo = document.getElementById('SeekingInvestmentRadioNo');
+	var seekingInvestmentYes = document.getElementById('SeekingInvestmentRadioYes');
+	var seekingInvestmentNo = document.getElementById('SeekingInvestmentRadioNo');
 
   var ceoLabel1 = document.getElementById('CEOCofounder1Label');
   var ceoLabel2 = document.getElementById('CEOCofounder2Label');
@@ -63,277 +62,190 @@ document.addEventListener("DOMContentLoaded", function() {
   var startupExperienceInput3 = document.getElementById('StartupExperienceBox3');
   var startupExperienceInput4 = document.getElementById('StartupExperienceBox4');
 
-  var capitalAccessInput1 = document.getElementById('CapitalAccessBox1');
-  var capitalAccessInput2 = document.getElementById('CapitalAccessBox2');
-  var capitalAccessInput3 = document.getElementById('CapitalAccessBox3');
-  var capitalAccessInput4 = document.getElementById('CapitalAccessBox4');
+// Get the new question fields
+var pitchingToInvestorsQuestion = document.getElementById('InvestorsPitchQuestion');
+var accessToCapitalQuestion = document.getElementById('CapitalAccessQuestion');
 
-  var cofounderCount = 2;
+// Get the radio buttons of new questions
+var pitchingYes = document.getElementById('PitchingBoxYes');
+var pitchingNo = document.getElementById('PitchingBoxNo');
+var capitalAccessYes = document.getElementById('CapitalAccessBoxYes');
+var capitalAccessNo = document.getElementById('CapitalAccessBoxNo');
 
-  var cofounder3Fields = [cofounder3NameInput, ceoInput3, ideaInput3, ideasGuyInput3, industryExpertiseInput3, startupExperienceInput3];
-  var cofounder4Fields = [cofounder4NameInput, ceoInput4, ideaInput4, ideasGuyInput4, industryExpertiseInput4, startupExperienceInput4];
-
-  function showField(field) {
-    field.style.display = 'block';
-  }
-
-  function hideField(field) {
-    field.style.display = 'none';
-  }
-
-  function showCofounderFields(cofounderFields) {
-    cofounderFields.forEach(function(field) {
-      showField(field);
+  function hideAllAdditionalInputs() {
+    var additionalInputs = [cofounder3NameInput, cofounder4NameInput, cofounder3NameLabel, cofounder4NameLabel, ceoLabel3, ceoLabel4, ideaLabel3, ideaLabel4, ceoInput3, ceoInput4, ideaInput3, ideaInput4, ideasGuyInput3, ideasGuyInput4, ideasGuyLabel3, ideasGuyLabel4, industryExpertiseInput3, industryExpertiseInput4, industryExpertiseLabel3, industryExpertiseLabel4, startupExperienceInput3, startupExperienceInput4, startupExperienceLabel3, startupExperienceLabel4];
+    additionalInputs.forEach(function(input) {
+      input.style.display = "none";
     });
   }
 
-  function hideCofounderFields(cofounderFields) {
-    cofounderFields.forEach(function(field) {
-      hideField(field);
+  function showAdditionalInputs(numCofounders) {
+    hideAllAdditionalInputs();
+    if (numCofounders >= 3) {
+      cofounder3NameInput.style.display = "block";
+      cofounder3NameLabel.style.display = "block";
+      ceoLabel3.style.display = "block";
+      ideaLabel3.style.display = "block";
+      ceoInput3.style.display = "block";
+      ideaInput3.style.display = "block";
+      ideasGuyInput3.style.display = "block";
+      ideasGuyLabel3.style.display = "block";
+      industryExpertiseInput3.style.display = "block";
+      industryExpertiseLabel3.style.display = "block";
+      startupExperienceInput3.style.display = "block";
+      startupExperienceLabel3.style.display = "block";
+      PitchingBox3.style.display = "block";
+      PitchingLabel3.style.display = "block";
+      CapitalAccessBox3.style.display = "block";
+      CapitalAccessLabel3.style.display = "block";
+    }
+    if (numCofounders == 4) {
+      cofounder4NameInput.style.display = "block";
+      cofounder4NameLabel.style.display = "block";
+      ceoLabel4.style.display = "block";
+      ideaLabel4.style.display = "block";
+      ceoInput4.style.display = "block";
+      ideaInput4.style.display = "block";
+      ideasGuyInput4.style.display = "block";
+      ideasGuyLabel4.style.display = "block";
+      industryExpertiseInput4.style.display = "block";
+      industryExpertiseLabel4.style.display = "block";
+      startupExperienceInput4.style.display = "block";
+      startupExperienceLabel4.style.display = "block";
+      PitchingBox4.style.display = "block";
+      PitchingLabel4.style.display = "block";
+      CapitalAccessBox4.style.display = "block";
+      CapitalAccessLabel4.style.display = "block";
+    }
+  }
+
+  var cofounderInputs = document.getElementsByName('numCofounders');
+  for(var i = 0; i < cofounderInputs.length; i++) {
+    cofounderInputs[i].addEventListener('change', function() {
+      showAdditionalInputs(parseInt(this.value));
     });
   }
-
-  function toggleCofounderFields(cofounderCount) {
-    if (cofounderCount >= 3) {
-      showCofounderFields(cofounder3Fields);
-    } else {
-      hideCofounderFields(cofounder3Fields);
-    }
-
-    if (cofounderCount >= 4) {
-      showCofounderFields(cofounder4Fields);
-    } else {
-      hideCofounderFields(cofounder4Fields);
-    }
-  }
-
-  function updateCofounderCount(count) {
-    cofounderCount = count;
-    toggleCofounderFields(cofounderCount);
-  }
-
-  function updateCofounderLabels() {
-    ceoLabel1.innerHTML = 'CEO/Co-founder 1';
-    ceoLabel2.innerHTML = 'CEO/Co-founder 2';
-    ideaLabel1.innerHTML = 'Idea 1';
-    ideaLabel2.innerHTML = 'Idea 2';
-    ideasGuyLabel1.innerHTML = 'The Ideas Guy 1';
-    ideasGuyLabel2.innerHTML = 'The Ideas Guy 2';
-    industryExpertiseLabel1.innerHTML = 'Industry Expertise 1';
-    industryExpertiseLabel2.innerHTML = 'Industry Expertise 2';
-    startupExperienceLabel1.innerHTML = 'Startup Experience 1';
-    startupExperienceLabel2.innerHTML = 'Startup Experience 2';
-
-    if (cofounderCount >= 3) {
-      ceoLabel3.innerHTML = 'CEO/Co-founder 3';
-      ideaLabel3.innerHTML = 'Idea 3';
-      ideasGuyLabel3.innerHTML = 'The Ideas Guy 3';
-      industryExpertiseLabel3.innerHTML = 'Industry Expertise 3';
-      startupExperienceLabel3.innerHTML = 'Startup Experience 3';
-    } else {
-      ceoLabel3.innerHTML = '';
-      ideaLabel3.innerHTML = '';
-      ideasGuyLabel3.innerHTML = '';
-      industryExpertiseLabel3.innerHTML = '';
-      startupExperienceLabel3.innerHTML = '';
-    }
-
-    if (cofounderCount >= 4) {
-      ceoLabel4.innerHTML = 'CEO/Co-founder 4';
-      ideaLabel4.innerHTML = 'Idea 4';
-      ideasGuyLabel4.innerHTML = 'The Ideas Guy 4';
-      industryExpertiseLabel4.innerHTML = 'Industry Expertise 4';
-      startupExperienceLabel4.innerHTML = 'Startup Experience 4';
-    } else {
-      ceoLabel4.innerHTML = '';
-      ideaLabel4.innerHTML = '';
-      ideasGuyLabel4.innerHTML = '';
-      industryExpertiseLabel4.innerHTML = '';
-      startupExperienceLabel4.innerHTML = '';
-    }
-  }
-
-  function updatePointsForInput(inputId, points) {
-    var input = document.getElementById(inputId);
-    var inputPoints = document.getElementById(inputId + 'Points');
-
-    if (input.checked) {
-      inputPoints.innerHTML = points;
-    } else {
-      inputPoints.innerHTML = '0';
-    }
-
-    updateTotalPoints();
-  }
-
-  function updateTotalPoints() {
-    var totalPoints = 0;
-
-    // Calculate total points based on inputs
-    totalPoints += parseInt(document.getElementById('CEOCofounder1Points').innerHTML);
-    totalPoints += parseInt(document.getElementById('CEOCofounder2Points').innerHTML);
-    totalPoints += parseInt(document.getElementById('IdeaBoxCofounder1Points').innerHTML);
-    totalPoints += parseInt(document.getElementById('IdeaBoxCofounder2Points').innerHTML);
-    totalPoints += parseInt(document.getElementById('IdeasGuyBox1Points').innerHTML);
-    totalPoints += parseInt(document.getElementById('IdeasGuyBox2Points').innerHTML);
-    totalPoints += parseInt(document.getElementById('IndustryExpertiseBox1Points').innerHTML);
-    totalPoints += parseInt(document.getElementById('IndustryExpertiseBox2Points').innerHTML);
-    totalPoints += parseInt(document.getElementById('StartupExperienceBox1Points').innerHTML);
-    totalPoints += parseInt(document.getElementById('StartupExperienceBox2Points').innerHTML);
-
-    if (cofounderCount >= 3) {
-      totalPoints += parseInt(document.getElementById('CEOCofounder3Points').innerHTML);
-      totalPoints += parseInt(document.getElementById('IdeaBoxCofounder3Points').innerHTML);
-      totalPoints += parseInt(document.getElementById('IdeasGuyBox3Points').innerHTML);
-      totalPoints += parseInt(document.getElementById('IndustryExpertiseBox3Points').innerHTML);
-      totalPoints += parseInt(document.getElementById('StartupExperienceBox3Points').innerHTML);
-    }
-
-    if (cofounderCount >= 4) {
-      totalPoints += parseInt(document.getElementById('CEOCofounder4Points').innerHTML);
-      totalPoints += parseInt(document.getElementById('IdeaBoxCofounder4Points').innerHTML);
-      totalPoints += parseInt(document.getElementById('IdeasGuyBox4Points').innerHTML);
-      totalPoints += parseInt(document.getElementById('IndustryExpertiseBox4Points').innerHTML);
-      totalPoints += parseInt(document.getElementById('StartupExperienceBox4Points').innerHTML);
-    }
-
-    // Display total points
-    document.getElementById('TotalPoints').innerHTML = totalPoints;
-  }
-
-  // Event listeners
 
   cofounder1NameInput.addEventListener('input', function() {
-    ceoLabel1.innerHTML = 'CEO/Co-founder 1 - ' + cofounder1NameInput.value;
+    ceoLabel1.textContent = this.value;
+    ideaLabel1.textContent = this.value;
+    ideasGuyLabel1.textContent = this.value;
+    industryExpertiseLabel1.textContent = this.value;
+    startupExperienceLabel1.textContent = this.value;
   });
 
   cofounder2NameInput.addEventListener('input', function() {
-    ceoLabel2.innerHTML = 'CEO/Co-founder 2 - ' + cofounder2NameInput.value;
+    ceoLabel2.textContent = this.value;
+    ideaLabel2.textContent = this.value;
+    ideasGuyLabel2.textContent = this.value;
+    industryExpertiseLabel2.textContent = this.value;
+    startupExperienceLabel2.textContent = this.value;
   });
 
   cofounder3NameInput.addEventListener('input', function() {
-    ceoLabel3.innerHTML = 'CEO/Co-founder 3 - ' + cofounder3NameInput.value;
+    ceoLabel3.textContent = this.value;
+    ideaLabel3.textContent = this.value;
+    ideasGuyLabel3.textContent = this.value;
+    industryExpertiseLabel3.textContent = this.value;
+    startupExperienceLabel3.textContent = this.value;
   });
 
   cofounder4NameInput.addEventListener('input', function() {
-    ceoLabel4.innerHTML = 'CEO/Co-founder 4 - ' + cofounder4NameInput.value;
+    ceoLabel4.textContent = this.value;
+    ideaLabel4.textContent = this.value;
+    ideasGuyLabel4.textContent = this.value;
+    industryExpertiseLabel4.textContent = this.value;
+    startupExperienceLabel4.textContent = this.value;
   });
 
-  seekingInvestmentYes.addEventListener('change', function() {
-    if (seekingInvestmentYes.checked) {
-      capitalAccessInput1.disabled = false;
-      capitalAccessInput2.disabled = false;
-      capitalAccessInput3.disabled = false;
-      capitalAccessInput4.disabled = false;
+  var points = [0, 0, 0, 0]; 
+
+
+// Function to show or hide new questions
+function showOrHideNewQuestions() {
+  if (seekingInvestmentYes.checked) {
+    pitchingToInvestorsQuestion.style.display = "block";
+    accessToCapitalQuestion.style.display = "block";
+  } else {
+    pitchingToInvestorsQuestion.style.display = "none";
+    accessToCapitalQuestion.style.display = "none";
+    // Reset radio buttons for hidden questions
+    pitchingYes.checked = false;
+    pitchingNo.checked = false;
+    capitalAccessYes.checked = false;
+    capitalAccessNo.checked = false;
+  }
+}
+
+// Event listeners for the 'Seeking Investment' radio buttons
+seekingInvestmentYes.addEventListener('change', showOrHideNewQuestions);
+seekingInvestmentNo.addEventListener('change', showOrHideNewQuestions);
+
+ function updateEquitySplits() {
+  var totalPoints = points.reduce((a, b) => a + b, 0);
+  var equitySplits = points.map((point) => ((point / totalPoints) * 100).toFixed(2));
+
+  var cofounderNames = [
+    cofounder1NameInput.value || 'Cofounder 1',
+    cofounder2NameInput.value || 'Cofounder 2',
+    cofounder3NameInput.value || 'Cofounder 3',
+    cofounder4NameInput.value || 'Cofounder 4'
+  ];
+  
+  document.getElementById('equityCofounder1').textContent = cofounderNames[0] + ': ' + equitySplits[0] + '%';
+  document.getElementById('equityCofounder2').textContent = cofounderNames[1] + ': ' + equitySplits[1] + '%';
+  if (cofounder3NameInput.style.display !== 'none') {
+    document.getElementById('equityCofounder3').textContent = cofounderNames[2] + ': ' + equitySplits[2] + '%';
+  } else {
+    document.getElementById('equityCofounder3').textContent = '';
+  }
+  if (cofounder4NameInput.style.display !== 'none') {
+    document.getElementById('equityCofounder4').textContent = cofounderNames[3] + ': ' + equitySplits[3] + '%';
+  } else {
+    document.getElementById('equityCofounder4').textContent = '';
+  }
+}
+
+// stores the previous state of each checkbox
+var prevState = {
+  'CEOCofounder': [false, false, false, false],
+  'IdeaBoxCofounder': [false, false, false, false],
+  'IdeasGuyBox': [false, false, false, false],
+  'IndustryExpertiseBox': [false, false, false, false],
+  'StartupExperienceBox': [false, false, false, false]
+};
+
+
+function updatePointsForInput(inputIDPrefix, pointValue) {
+  for (var i = 0; i < 4; i++) {
+    var input = document.getElementById(inputIDPrefix + (i + 1));
+    if (input) {
+      input.addEventListener('change', function() {
+        // get index of the changed checkbox
+        var index = this.id.charAt(this.id.length - 1) - 1;
+        // get the previous state of the checkbox
+        var wasChecked = prevState[inputIDPrefix.charAt(0).toUpperCase() + inputIDPrefix.slice(1)][index];
+        if (wasChecked && !this.checked) {
+          // if checkbox was previously checked and is now unchecked, subtract the points
+          points[index] -= pointValue;
+        } else if (!wasChecked && this.checked) {
+          // if checkbox was previously unchecked and is now checked, add the points
+          points[index] += pointValue;
+        }
+        // save the current state of the checkbox
+        prevState[inputIDPrefix][index] = this.checked;
+        updateEquitySplits();
+      });
     }
-  });
+  }
+}
 
-  seekingInvestmentNo.addEventListener('change', function() {
-    if (seekingInvestmentNo.checked) {
-      capitalAccessInput1.disabled = true;
-      capitalAccessInput2.disabled = true;
-      capitalAccessInput3.disabled = true;
-      capitalAccessInput4.disabled = true;
-    }
-  });
 
-  ceoInput1.addEventListener('change', function() {
-    updatePointsForInput('CEOCofounder1', 5);
-  });
-
-  ceoInput2.addEventListener('change', function() {
-    updatePointsForInput('CEOCofounder2', 5);
-  });
-
-  ceoInput3.addEventListener('change', function() {
-    updatePointsForInput('CEOCofounder3', 5);
-  });
-
-  ceoInput4.addEventListener('change', function() {
-    updatePointsForInput('CEOCofounder4', 5);
-  });
-
-  ideaInput1.addEventListener('change', function() {
-    updatePointsForInput('IdeaBoxCofounder1', 5);
-  });
-
-  ideaInput2.addEventListener('change', function() {
-    updatePointsForInput('IdeaBoxCofounder2', 5);
-  });
-
-  ideaInput3.addEventListener('change', function() {
-    updatePointsForInput('IdeaBoxCofounder3', 5);
-  });
-
-  ideaInput4.addEventListener('change', function() {
-    updatePointsForInput('IdeaBoxCofounder4', 5);
-  });
-
-  ideasGuyInput1.addEventListener('change', function() {
-    updatePointsForInput('IdeasGuyBox1', 3);
-  });
-
-  ideasGuyInput2.addEventListener('change', function() {
-    updatePointsForInput('IdeasGuyBox2', 3);
-  });
-
-  ideasGuyInput3.addEventListener('change', function() {
-    updatePointsForInput('IdeasGuyBox3', 3);
-  });
-
-  ideasGuyInput4.addEventListener('change', function() {
-    updatePointsForInput('IdeasGuyBox4', 3);
-  });
-
-  industryExpertiseInput1.addEventListener('change', function() {
-    updatePointsForInput('IndustryExpertiseBox1', 5);
-  });
-
-  industryExpertiseInput2.addEventListener('change', function() {
-    updatePointsForInput('IndustryExpertiseBox2', 5);
-  });
-
-  industryExpertiseInput3.addEventListener('change', function() {
-    updatePointsForInput('IndustryExpertiseBox3', 5);
-  });
-
-  industryExpertiseInput4.addEventListener('change', function() {
-    updatePointsForInput('IndustryExpertiseBox4', 5);
-  });
-
-  startupExperienceInput1.addEventListener('change', function() {
-    updatePointsForInput('StartupExperienceBox1', 5);
-  });
-
-  startupExperienceInput2.addEventListener('change', function() {
-    updatePointsForInput('StartupExperienceBox2', 5);
-  });
-
-  startupExperienceInput3.addEventListener('change', function() {
-    updatePointsForInput('StartupExperienceBox3', 5);
-  });
-
-  startupExperienceInput4.addEventListener('change', function() {
-    updatePointsForInput('StartupExperienceBox4', 5);
-  });
-
-  capitalAccessInput1.addEventListener('change', function() {
-    updatePointsForInput('CapitalAccessBox1', 10);
-  });
-
-  capitalAccessInput2.addEventListener('change', function() {
-    updatePointsForInput('CapitalAccessBox2', 10);
-  });
-
-  capitalAccessInput3.addEventListener('change', function() {
-    updatePointsForInput('CapitalAccessBox3', 10);
-  });
-
-  capitalAccessInput4.addEventListener('change', function() {
-    updatePointsForInput('CapitalAccessBox4', 10);
-  });
-
-  // Initialize the form
-  updateCofounderCount(2);
-  updateCofounderLabels();
+updatePointsForInput('CEOCofounder', 5);
+updatePointsForInput('IdeaBoxCofounder', 5);
+updatePointsForInput('IdeasGuyBox', 3);
+updatePointsForInput('IndustryExpertiseBox', 5);
+updatePointsForInput('StartupExperienceBox', 5);
+updatePointsForInput('PitchingBox', 5);
+updatePointsForInput('CapitalAccessBox', 10);
 });
