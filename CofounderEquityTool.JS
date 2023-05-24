@@ -79,45 +79,67 @@ var capitalAccessNo = document.getElementById('CapitalAccessBoxNo');
     });
   }
 
-  function showAdditionalInputs(numCofounders) {
-    hideAllAdditionalInputs();
-    if (numCofounders >= 3) {
-      cofounder3NameInput.style.display = "block";
-      cofounder3NameLabel.style.display = "block";
-      ceoLabel3.style.display = "block";
-      ideaLabel3.style.display = "block";
-      ceoInput3.style.display = "block";
-      ideaInput3.style.display = "block";
-      ideasGuyInput3.style.display = "block";
-      ideasGuyLabel3.style.display = "block";
-      industryExpertiseInput3.style.display = "block";
-      industryExpertiseLabel3.style.display = "block";
-      startupExperienceInput3.style.display = "block";
-      startupExperienceLabel3.style.display = "block";
-      PitchingBox3.style.display = "block";
-      PitchingLabel3.style.display = "block";
-      CapitalAccessBox3.style.display = "block";
-      CapitalAccessLabel3.style.display = "block";
-    }
-    if (numCofounders == 4) {
-      cofounder4NameInput.style.display = "block";
-      cofounder4NameLabel.style.display = "block";
-      ceoLabel4.style.display = "block";
-      ideaLabel4.style.display = "block";
-      ceoInput4.style.display = "block";
-      ideaInput4.style.display = "block";
-      ideasGuyInput4.style.display = "block";
-      ideasGuyLabel4.style.display = "block";
-      industryExpertiseInput4.style.display = "block";
-      industryExpertiseLabel4.style.display = "block";
-      startupExperienceInput4.style.display = "block";
-      startupExperienceLabel4.style.display = "block";
-      PitchingBox4.style.display = "block";
-      PitchingLabel4.style.display = "block";
-      CapitalAccessBox4.style.display = "block";
-      CapitalAccessLabel4.style.display = "block";
-    }
+function showAdditionalInputs(numCofounders) {
+  hideAllAdditionalInputs();
+  if (numCofounders >= 3) {
+    cofounder3NameInput.style.display = "block";
+    cofounder3NameLabel.style.display = "block";
+    ceoLabel3.style.display = "block";
+    ideaLabel3.style.display = "block";
+    ceoInput3.style.display = "block";
+    ideaInput3.style.display = "block";
+    ideasGuyInput3.style.display = "block";
+    ideasGuyLabel3.style.display = "block";
+    industryExpertiseInput3.style.display = "block";
+    industryExpertiseLabel3.style.display = "block";
+    startupExperienceInput3.style.display = "block";
+    startupExperienceLabel3.style.display = "block";
+    PitchingBox3.style.display = "block";
+    PitchingLabel3.style.display = "block";
   }
+  if (numCofounders == 4) {
+    cofounder4NameInput.style.display = "block";
+    cofounder4NameLabel.style.display = "block";
+    ceoLabel4.style.display = "block";
+    ideaLabel4.style.display = "block";
+    ceoInput4.style.display = "block";
+    ideaInput4.style.display = "block";
+    ideasGuyInput4.style.display = "block";
+    ideasGuyLabel4.style.display = "block";
+    industryExpertiseInput4.style.display = "block";
+    industryExpertiseLabel4.style.display = "block";
+    startupExperienceInput4.style.display = "block";
+    startupExperienceLabel4.style.display = "block";
+    PitchingBox4.style.display = "block";
+    PitchingLabel4.style.display = "block";
+  }
+
+  var isSeekingInvestmentYes = seekingInvestmentYes.checked;
+
+  if (numCofounders >= 3 && isSeekingInvestmentYes) {
+    CapitalAccessBox3.style.display = "block";
+    CapitalAccessLabel3.style.display = "block";
+  }
+
+  if (numCofounders == 4 && isSeekingInvestmentYes) {
+    CapitalAccessBox4.style.display = "block";
+    CapitalAccessLabel4.style.display = "block";
+  }
+}
+
+
+  var isSeekingInvestmentYes = seekingInvestmentYes.checked;
+
+  if (numCofounders >= 3 && isSeekingInvestmentYes) {
+    CapitalAccessBox3.style.display = "block";
+    CapitalAccessLabel3.style.display = "block";
+  }
+
+  if (numCofounders == 4 && isSeekingInvestmentYes) {
+    CapitalAccessBox4.style.display = "block";
+    CapitalAccessLabel4.style.display = "block";
+  }
+}
 
   var cofounderInputs = document.getElementsByName('numCofounders');
   for(var i = 0; i < cofounderInputs.length; i++) {
