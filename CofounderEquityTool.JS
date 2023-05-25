@@ -79,8 +79,8 @@ var capitalAccessNo = document.getElementById('CapitalAccessBoxNo');
     });
   }
 
-  function showAdditionalInputs(numCofounders) {
-    hideAllAdditionalInputs();
+function showAdditionalInputs(numCofounders) {
+  hideAllAdditionalInputs();
   if (numCofounders >= 3) {
     cofounder3NameInput.style.display = "block";
     cofounder3NameLabel.style.display = "block";
@@ -112,8 +112,8 @@ var capitalAccessNo = document.getElementById('CapitalAccessBoxNo');
     startupExperienceLabel4.style.display = "block";
     PitchingBox4.style.display = "block";
     PitchingLabel4.style.display = "block";
-   }
-}
+  }
+
   var isSeekingInvestmentYes = seekingInvestmentYes.checked;
 
   if (numCofounders >= 3 && isSeekingInvestmentYes) {
