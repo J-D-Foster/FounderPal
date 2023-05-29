@@ -177,6 +177,8 @@ function showAdditionalInputs(numCofounders) {
     ideasGuyLabel1.textContent = this.value;
     industryExpertiseLabel1.textContent = this.value;
     startupExperienceLabel1.textContent = this.value;
+    PitchingLabel1.textContent = this.value;
+    CapitalAccessLabel1.textContent = this.value;
   });
 
   cofounder2NameInput.addEventListener('input', function() {
@@ -185,6 +187,8 @@ function showAdditionalInputs(numCofounders) {
     ideasGuyLabel2.textContent = this.value;
     industryExpertiseLabel2.textContent = this.value;
     startupExperienceLabel2.textContent = this.value;
+    PitchingLabel2.textContent = this.value;
+    CapitalAccessLabel2.textContent = this.value;
   });
 
   cofounder3NameInput.addEventListener('input', function() {
@@ -193,6 +197,8 @@ function showAdditionalInputs(numCofounders) {
     ideasGuyLabel3.textContent = this.value;
     industryExpertiseLabel3.textContent = this.value;
     startupExperienceLabel3.textContent = this.value;
+    PitchingLabel3.textContent = this.value;
+    CapitalAccessLabel3.textContent = this.value;
   });
 
   cofounder4NameInput.addEventListener('input', function() {
@@ -201,6 +207,8 @@ function showAdditionalInputs(numCofounders) {
     ideasGuyLabel4.textContent = this.value;
     industryExpertiseLabel4.textContent = this.value;
     startupExperienceLabel4.textContent = this.value;
+    PitchingLabel4.textContent = this.value;
+    CapitalAccessLabel4.textContent = this.value;
   });
 
   var points = [0, 0, 0, 0]; 
