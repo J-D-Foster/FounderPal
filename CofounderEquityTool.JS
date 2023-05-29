@@ -38,6 +38,17 @@ document.addEventListener("DOMContentLoaded", function() {
   var startupExperienceLabel3 = document.getElementById('StartupExperienceLabel3');
   var startupExperienceLabel4 = document.getElementById('StartupExperienceLabel4');
 
+  var pitchingLabel1 = document.getElementById('PitchingLabel1');
+  var pitchingLabel2 = document.getElementById('PitchingLabel2');
+  var pitchingLabel3 = document.getElementById('PitchingLabel3');
+  var pitchingLabel4 = document.getElementById('PitchingLabel4');
+
+  var capitalAccessLabel1 = document.getElementById('CapitalAccessLabel1');
+  var capitalAccessLabel2 = document.getElementById('CapitalAccessLabel2');
+  var capitalAccessLabel3 = document.getElementById('CapitalAccessLabel3');
+  var capitalAccessLabel4 = document.getElementById('CapitalAccessLabel4');
+
+
   var ceoInput1 = document.getElementById('CEOCofounder1');
   var ceoInput2 = document.getElementById('CEOCofounder2');
   var ceoInput3 = document.getElementById('CEOCofounder3');
@@ -63,27 +74,15 @@ document.addEventListener("DOMContentLoaded", function() {
   var startupExperienceInput3 = document.getElementById('StartupExperienceBox3');
   var startupExperienceInput4 = document.getElementById('StartupExperienceBox4');
  
-  var PitchingBox1 = document.getElementById('PitchingBox1');
-  var PitchingBox2 = document.getElementById('PitchingBox2');	
-  var PitchingBox3 = document.getElementById('PitchingBox3');
-  var PitchingBox4 = document.getElementById('PitchingBox4');
+  var pitchingInput1 = document.getElementById('PitchingBox1');
+  var pitchingInput2 = document.getElementById('PitchingBox2');	
+  var pitchingInput3 = document.getElementById('PitchingBox3');
+  var pitchingInput4 = document.getElementById('PitchingBox4');
 
-  var PitchingLabel1 = document.getElementById('PitchingLabel1');
-  var PitchingLabel2 = document.getElementById('PitchingLabel2');
-  var PitchingLabel3 = document.getElementById('PitchingLabel3');
-  var PitchingLabel4 = document.getElementById('PitchingLabel4');
-
-
-  var CapitalAccessBox1 = document.getElementById('CapitalAccessBox1');
-  var CapitalAccessBox2 = document.getElementById('CapitalAccessBox2');
-  var CapitalAccessBox3 = document.getElementById('CapitalAccessBox3');
-  var CapitalAccessBox4 = document.getElementById('CapitalAccessBox4');
-
-  var CapitalAccessLabel1 = document.getElementById('CapitalAccessLabel1');
-  var CapitalAccessLabel2 = document.getElementById('CapitalAccessLabel2');
-  var CapitalAccessLabel3 = document.getElementById('CapitalAccessLabel3');
-  var CapitalAccessLabel4 = document.getElementById('CapitalAccessLabel4');
-	
+  var capitalInput1 = document.getElementById('CapitalAccessBox1');
+  var capitalInput2 = document.getElementById('CapitalAccessBox2');
+  var capitalInput3 = document.getElementById('CapitalAccessBox3');
+  var capitalInput4 = document.getElementById('CapitalAccessBox4');	
 	
 // Get the new question fields
 var pitchingToInvestorsQuestion = document.getElementById('InvestorsPitchQuestion');
@@ -96,7 +95,7 @@ var capitalAccessYes = document.getElementById('CapitalAccessBoxYes');
 var capitalAccessNo = document.getElementById('CapitalAccessBoxNo');
 
   function hideAllAdditionalInputs() {
-    var additionalInputs = [cofounder3NameInput, cofounder4NameInput, cofounder3NameLabel, cofounder4NameLabel, ceoLabel3, ceoLabel4, ideaLabel3, ideaLabel4, ceoInput3, ceoInput4, ideaInput3, ideaInput4, ideasGuyInput3, ideasGuyInput4, ideasGuyLabel3, ideasGuyLabel4, industryExpertiseInput3, industryExpertiseInput4, industryExpertiseLabel3, industryExpertiseLabel4, startupExperienceInput3, startupExperienceInput4, startupExperienceLabel3, startupExperienceLabel4];
+    var additionalInputs = [cofounder3NameInput, cofounder4NameInput, cofounder3NameLabel, cofounder4NameLabel, ceoLabel3, ceoLabel4, ideaLabel3, ideaLabel4, ceoInput3, ceoInput4, ideaInput3, ideaInput4, ideasGuyInput3, ideasGuyInput4, ideasGuyLabel3, ideasGuyLabel4, industryExpertiseInput3, industryExpertiseInput4, industryExpertiseLabel3, industryExpertiseLabel4, startupExperienceInput3, startupExperienceInput4, startupExperienceLabel3, startupExperienceLabel4, pitchingInput3, pitchingInput4, pitchingLabel3, pitchingLabel4, capitalInput3, capitalInput4, capitalAccessLabel3, capitalAccessLabel4];
     additionalInputs.forEach(function(input) {
       input.style.display = "none";
     });
@@ -117,10 +116,10 @@ function showAdditionalInputs(numCofounders) {
     industryExpertiseLabel3.style.display = "block";
     startupExperienceInput3.style.display = "block";
     startupExperienceLabel3.style.display = "block";
-    PitchingBox3.style.display = "block";
-    PitchingLabel3.style.display = "block";
-    CapitalAccessBox3.style.display = "block";
-    CapitalAccessLabel3.style.display = "block";
+    pitchingInput3.style.display = "block";
+    pitchingLabel3.style.display = "block";
+    capitalInput3.style.display = "block";
+    capitalAccessLabel3.style.display = "block";
   }
   if (numCofounders == 4) {
     cofounder4NameInput.style.display = "block";
@@ -135,32 +134,32 @@ function showAdditionalInputs(numCofounders) {
     industryExpertiseLabel4.style.display = "block";
     startupExperienceInput4.style.display = "block";
     startupExperienceLabel4.style.display = "block";
-    PitchingBox4.style.display = "block";
-    PitchingLabel4.style.display = "block";
-    CapitalAccessBox4.style.display = "block";
-    CapitalAccessLabel4.style.display = "block";
+    pitchingInput4.style.display = "block";
+    pitchingLabel4.style.display = "block";
+    capitalInput4.style.display = "block";
+    capitalAccessLabel4.style.display = "block";
   }
 	
   var isSeekingInvestmentYes = seekingInvestmentYes.checked;
 
   if (numCofounders >= 1 && isSeekingInvestmentYes) {
-    CapitalAccessBox1.style.display = "block";
-    CapitalAccessLabel1.style.display = "block";
+   capitalInput1.style.display = "block";
+    capitalAccessLabel1.style.display = "block";
   }
 
   if (numCofounders >= 2 && isSeekingInvestmentYes) {
-    CapitalAccessBox1.style.display = "block";
-    CapitalAccessLabel1.style.display = "block";
+    capitalInput1.style.display = "block";
+    capitalAccessLabel1.style.display = "block";
   }
 
   if (numCofounders >= 3 && isSeekingInvestmentYes) {
-    CapitalAccessBox3.style.display = "block";
-    CapitalAccessLabel3.style.display = "block";
+    capitalInput3.style.display = "block";
+    capitalAccessLabel3.style.display = "block";
   }
 
   if (numCofounders == 4 && isSeekingInvestmentYes) {
-    CapitalAccessBox4.style.display = "block";
-    CapitalAccessLabel4.style.display = "block";
+    capitalInput4.style.display = "block";
+    capitalAccessLabel4.style.display = "block";
   }
 }
 
@@ -177,8 +176,8 @@ function showAdditionalInputs(numCofounders) {
     ideasGuyLabel1.textContent = this.value;
     industryExpertiseLabel1.textContent = this.value;
     startupExperienceLabel1.textContent = this.value;
-    PitchingLabel1.textContent = this.value;
-    CapitalAccessLabel1.textContent = this.value;
+    pitchingLabel1.textContent = this.value;
+    capitalAccessLabel1.textContent = this.value;
   });
 
   cofounder2NameInput.addEventListener('input', function() {
@@ -187,8 +186,8 @@ function showAdditionalInputs(numCofounders) {
     ideasGuyLabel2.textContent = this.value;
     industryExpertiseLabel2.textContent = this.value;
     startupExperienceLabel2.textContent = this.value;
-    PitchingLabel2.textContent = this.value;
-    CapitalAccessLabel2.textContent = this.value;
+    pitchingLabel2.textContent = this.value;
+    capitalAccessLabel2.textContent = this.value;
   });
 
   cofounder3NameInput.addEventListener('input', function() {
@@ -197,8 +196,8 @@ function showAdditionalInputs(numCofounders) {
     ideasGuyLabel3.textContent = this.value;
     industryExpertiseLabel3.textContent = this.value;
     startupExperienceLabel3.textContent = this.value;
-    PitchingLabel3.textContent = this.value;
-    CapitalAccessLabel3.textContent = this.value;
+    pitchingLabel3.textContent = this.value;
+    capitalAccessLabel3.textContent = this.value;
   });
 
   cofounder4NameInput.addEventListener('input', function() {
@@ -207,8 +206,8 @@ function showAdditionalInputs(numCofounders) {
     ideasGuyLabel4.textContent = this.value;
     industryExpertiseLabel4.textContent = this.value;
     startupExperienceLabel4.textContent = this.value;
-    PitchingLabel4.textContent = this.value;
-    CapitalAccessLabel4.textContent = this.value;
+    pitchingLabel4.textContent = this.value;
+    capitalAccessLabel4.textContent = this.value;
   });
 
   var points = [0, 0, 0, 0]; 
