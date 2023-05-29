@@ -125,9 +125,8 @@ function showAdditionalInputs(numCofounders) {
     CapitalAccessBox4.style.display = "block";
     CapitalAccessLabel4.style.display = "block";
   }
-}
 
-
+	
   var isSeekingInvestmentYes = seekingInvestmentYes.checked;
 
   if (numCofounders >= 3 && isSeekingInvestmentYes) {
