@@ -140,19 +140,6 @@ function showAdditionalInputs(numCofounders) {
     CapitalAccessBox4.style.display = "block";
     CapitalAccessLabel4.style.display = "block";
   }
-
-  var isSeekingInvestmentYes = seekingInvestmentYes.checked;
-
-  if (numCofounders >= 3 && isSeekingInvestmentYes) {
-    CapitalAccessBox3.style.display = "block";
-    CapitalAccessLabel3.style.display = "block";
-  }
-
-  if (numCofounders == 4 && isSeekingInvestmentYes) {
-    CapitalAccessBox4.style.display = "block";
-    CapitalAccessLabel4.style.display = "block";
-  }
-
 	
   var isSeekingInvestmentYes = seekingInvestmentYes.checked;
 
@@ -270,8 +257,11 @@ var prevState = {
   'IdeaBoxCofounder': [false, false, false, false],
   'IdeasGuyBox': [false, false, false, false],
   'IndustryExpertiseBox': [false, false, false, false],
-  'StartupExperienceBox': [false, false, false, false]
+  'StartupExperienceBox': [false, false, false, false],
+  'PitchingBox': [false, false, false, false],
+  'CapitalAccessBox': [false, false, false, false]
 };
+
 
 
 function updatePointsForInput(inputIDPrefix, pointValue) {
