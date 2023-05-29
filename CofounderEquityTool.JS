@@ -56,9 +56,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updatePointsForInput(inputIDPrefix, pointValue) {
         for (const cofounder of cofounders) {
-            if (cofounder[inputIDPrefix]) {
-                cof to save space in output, please show on request
-if (cofounder[inputIDPrefix + 'Input'].checked) {
+            if (cofounder[inputIDPrefix + 'Input']) {
+                if (cofounder[inputIDPrefix + 'Input'].checked) {
                     if (!prevState[inputIDPrefix][cofounder.num - 1]) {
                         points[cofounder.num - 1] += pointValue;
                         prevState[inputIDPrefix][cofounder.num - 1] = true;
