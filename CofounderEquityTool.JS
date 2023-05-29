@@ -276,4 +276,4 @@ updatePointsForInput('IndustryExpertiseBox', 5);
 updatePointsForInput('StartupExperienceBox', 5);
 updatePointsForInput('PitchingBox', 5);
 updatePointsForInput('CapitalAccessBox', 10);
-});
+};
