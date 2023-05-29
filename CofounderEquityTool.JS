@@ -125,31 +125,27 @@ function showAdditionalInputs(numCofounders) {
     PitchingLabel4.style.display = "block";
   }
 
-  var isSeekingInvestmentYes = seekingInvestmentYes.checked;
+   if (seekingInvestmentYes.checked) {
+    pitchingToInvestorsQuestion.style.display = "block";
+    accessToCapitalQuestion.style.display = "block";
+  } else {
+    pitchingToInvestorsQuestion.style.display = "none";
+    accessToCapitalQuestion.style.display = "none";
+    pitchingYes.checked = false;
+    pitchingNo.checked = false;
+    capitalAccessYes.checked = false;
+    capitalAccessNo.checked = false;
+  }
 
-  if (numCofounders >= 3 && isSeekingInvestmentYes) {
+  if (numCofounders >= 3 && seekingInvestmentYes.checked) {
     CapitalAccessBox3.style.display = "block";
     CapitalAccessLabel3.style.display = "block";
   }
 
-  if (numCofounders == 4 && isSeekingInvestmentYes) {
+  if (numCofounders == 4 && seekingInvestmentYes.checked) {
     CapitalAccessBox4.style.display = "block";
     CapitalAccessLabel4.style.display = "block";
   }
-
-	
-  var isSeekingInvestmentYes = seekingInvestmentYes.checked;
-
-  if (numCofounders >= 3 && isSeekingInvestmentYes) {
-    CapitalAccessBox3.style.display = "block";
-    CapitalAccessLabel3.style.display = "block";
-  }
-
-  if (numCofounders == 4 && isSeekingInvestmentYes) {
-    CapitalAccessBox4.style.display = "block";
-    CapitalAccessLabel4.style.display = "block";
-  }
-}
 
   var cofounderInputs = document.getElementsByName('numCofounders');
   for(var i = 0; i < cofounderInputs.length; i++) {
