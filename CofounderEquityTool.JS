@@ -61,7 +61,18 @@ document.addEventListener("DOMContentLoaded", function() {
   var startupExperienceInput2 = document.getElementById('StartupExperienceBox2');
   var startupExperienceInput3 = document.getElementById('StartupExperienceBox3');
   var startupExperienceInput4 = document.getElementById('StartupExperienceBox4');
-
+ 
+	
+  var PitchingBox3 = document.getElementById('PitchingBox3');
+  var PitchingBox4 = document.getElementById('PitchingBox4');
+  var PitchingLabel3 = document.getElementById('PitchingLabel3');
+  var PitchingLabel4 = document.getElementById('PitchingLabel4');
+  var CapitalAccessBox3 = document.getElementById('CapitalAccessBox3');
+  var CapitalAccessBox4 = document.getElementById('CapitalAccessBox4');
+  var CapitalAccessLabel3 = document.getElementById('CapitalAccessLabel3');
+  var CapitalAccessLabel4 = document.getElementById('CapitalAccessLabel4');
+	
+	
 // Get the new question fields
 var pitchingToInvestorsQuestion = document.getElementById('InvestorsPitchQuestion');
 var accessToCapitalQuestion = document.getElementById('CapitalAccessQuestion');
