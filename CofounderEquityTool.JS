@@ -140,7 +140,29 @@ function showAdditionalInputs(numCofounders) {
     capitalAccessLabel4.style.display = "block";
   }
 	
-var isSeekingInvestmentYes = seekingInvestmentYes.checked; if (isSeekingInvestmentYes) { if (numCofounders >= 1) { capitalInput1.style.display = "block"; capitalAccessLabel1.style.display = "block"; } if (numCofounders >= 2) { capitalInput2.style.display = "block"; capitalAccessLabel2.style.display = "block"; } if (numCofounders >= 3) { capitalInput3.style.display = "block"; capitalAccessLabel3.style.display = "block"; } if (numCofounders == 4) { capitalInput4.style.display = "block"; capitalAccessLabel4.style.display = "block"; } }
+  var isSeekingInvestmentYes = seekingInvestmentYes.checked;
+
+if (isSeekingInvestmentYes) {
+    if (numCofounders >= 1) {
+      capitalInput1.style.display = "block";
+      capitalAccessLabel1.style.display = "block";
+    }
+    if (numCofounders >= 2) {
+      capitalInput2.style.display = "block";
+      capitalAccessLabel2.style.display = "block";
+    }
+    if (numCofounders >= 3) {
+      capitalInput3.style.display = "block";
+      capitalAccessLabel3.style.display = "block";
+    }
+    if (numCofounders == 4) {
+      capitalInput4.style.display = "block";
+      capitalAccessLabel4.style.display = "block";
+    }
+  }
+}
+
+
   var cofounderInputs = document.getElementsByName('numCofounders');
   for(var i = 0; i < cofounderInputs.length; i++) {
     cofounderInputs[i].addEventListener('change', function() {
