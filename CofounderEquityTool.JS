@@ -94,15 +94,16 @@ var pitchingNo = document.getElementById('PitchingBoxNo');
 var capitalAccessYes = document.getElementById('CapitalAccessBoxYes');
 var capitalAccessNo = document.getElementById('CapitalAccessBoxNo');
 
-  function hideAllAdditionalInputs() {
-    var additionalInputs = [cofounder3NameInput, cofounder4NameInput, cofounder3NameLabel, cofounder4NameLabel, ceoLabel3, ceoLabel4, ideaLabel3, ideaLabel4, ceoInput3, ceoInput4, ideaInput3, ideaInput4, ideasGuyInput3, ideasGuyInput4, ideasGuyLabel3, ideasGuyLabel4, industryExpertiseInput3, industryExpertiseInput4, industryExpertiseLabel3, industryExpertiseLabel4, startupExperienceInput3, startupExperienceInput4, startupExperienceLabel3, startupExperienceLabel4, pitchingInput3, pitchingInput4, pitchingLabel3, pitchingLabel4, capitalInput3, capitalInput4, capitalAccessLabel3, capitalAccessLabel4];
-    additionalInputs.forEach(function(input) {
-      input.style.display = "none";
-    });
-  }
+function hideAllAdditionalInputs() {
+  var additionalInputs = [cofounder3NameInput, cofounder4NameInput, cofounder3NameLabel, cofounder4NameLabel, ceoLabel3, ceoLabel4, ideaLabel3, ideaLabel4, ceoInput3, ceoInput4, ideaInput3, ideaInput4, ideasGuyInput3, ideasGuyInput4, ideasGuyLabel3, ideasGuyLabel4, industryExpertiseInput3, industryExpertiseInput4, industryExpertiseLabel3, industryExpertiseLabel4, startupExperienceInput3, startupExperienceInput4, startupExperienceLabel3, startupExperienceLabel4, pitchingInput3, pitchingInput4, pitchingLabel3, pitchingLabel4, capitalInput3, capitalInput4, capitalAccessLabel3, capitalAccessLabel4];
+  additionalInputs.forEach(function(input) {
+    input.style.display = "none";
+  });
+}
 
 function showAdditionalInputs(numCofounders) {
   hideAllAdditionalInputs();
+
   if (numCofounders >= 3) {
     cofounder3NameInput.style.display = "block";
     cofounder3NameLabel.style.display = "block";
@@ -116,11 +117,8 @@ function showAdditionalInputs(numCofounders) {
     industryExpertiseLabel3.style.display = "block";
     startupExperienceInput3.style.display = "block";
     startupExperienceLabel3.style.display = "block";
-    pitchingInput3.style.display = "block";
-    pitchingLabel3.style.display = "block";
-    capitalInput3.style.display = "block";
-    capitalAccessLabel3.style.display = "block";
   }
+
   if (numCofounders == 4) {
     cofounder4NameInput.style.display = "block";
     cofounder4NameLabel.style.display = "block";
@@ -134,15 +132,11 @@ function showAdditionalInputs(numCofounders) {
     industryExpertiseLabel4.style.display = "block";
     startupExperienceInput4.style.display = "block";
     startupExperienceLabel4.style.display = "block";
-    pitchingInput4.style.display = "block";
-    pitchingLabel4.style.display = "block";
-    capitalInput4.style.display = "block";
-    capitalAccessLabel4.style.display = "block";
   }
-	
+
   var isSeekingInvestmentYes = seekingInvestmentYes.checked;
 
-if (isSeekingInvestmentYes) {
+  if (isSeekingInvestmentYes) {
     if (numCofounders >= 1) {
       capitalInput1.style.display = "block";
       capitalAccessLabel1.style.display = "block";
@@ -154,14 +148,17 @@ if (isSeekingInvestmentYes) {
     if (numCofounders >= 3) {
       capitalInput3.style.display = "block";
       capitalAccessLabel3.style.display = "block";
+      pitchingInput3.style.display = "block";
+      pitchingLabel3.style.display = "block";
     }
     if (numCofounders == 4) {
       capitalInput4.style.display = "block";
       capitalAccessLabel4.style.display = "block";
+      pitchingInput4.style.display = "block";
+      pitchingLabel4.style.display = "block";
     }
   }
 }
-
 
   var cofounderInputs = document.getElementsByName('numCofounders');
   for(var i = 0; i < cofounderInputs.length; i++) {
