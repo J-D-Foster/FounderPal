@@ -100,64 +100,64 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-function showAdditionalInputs(numCofounders) {
-  hideAllAdditionalInputs();
-  if (numCofounders >= 3) {
-    cofounder3NameInput.style.display = "block";
-    cofounder3NameLabel.style.display = "block";
-    ceoLabel3.style.display = "block";
-    ideaLabel3.style.display = "block";
-    ceoInput3.style.display = "block";
-    ideaInput3.style.display = "block";
-    ideasGuyInput3.style.display = "block";
-    ideasGuyLabel3.style.display = "block";
-    industryExpertiseInput3.style.display = "block";
-    industryExpertiseLabel3.style.display = "block";
-    startupExperienceInput3.style.display = "block";
-    startupExperienceLabel3.style.display = "block";
-    if (seekingInvestmentYes.checked) {
-      pitchingInput3.style.display = "block";
-      pitchingLabel3.style.display = "block";
-    }
-  }
-  if (numCofounders == 4) {
-    cofounder4NameInput.style.display = "block";
-    cofounder4NameLabel.style.display = "block";
-    ceoLabel4.style.display = "block";
-    ideaLabel4.style.display = "block";
-    ceoInput4.style.display = "block";
-    ideaInput4.style.display = "block";
-    ideasGuyInput4.style.display = "block";
-    ideasGuyLabel4.style.display = "block";
-    industryExpertiseInput4.style.display = "block";
-    industryExpertiseLabel4.style.display = "block";
-    startupExperienceInput4.style.display = "block";
-    startupExperienceLabel4.style.display = "block";
-    if (seekingInvestmentYes.checked) {
-      pitchingInput4.style.display = "block";
-      pitchingLabel4.style.display = "block";
-    }
-  }
-
-  if (seekingInvestmentYes.checked) {
-    if (numCofounders >= 1) {
-      capitalInput1.style.display = "block";
-      capitalAccessLabel1.style.display = "block";
-    }
-    if (numCofounders >= 2) {
-      capitalInput2.style.display = "block";
-      capitalAccessLabel2.style.display = "block";
-    }
+  function showAdditionalInputs(numCofounders) {
+    hideAllAdditionalInputs();
     if (numCofounders >= 3) {
-      capitalInput3.style.display = "block";
-      capitalAccessLabel3.style.display = "block";
+      cofounder3NameInput.style.display = "block";
+      cofounder3NameLabel.style.display = "block";
+      ceoLabel3.style.display = "block";
+      ideaLabel3.style.display = "block";
+      ceoInput3.style.display = "block";
+      ideaInput3.style.display = "block";
+      ideasGuyInput3.style.display = "block";
+      ideasGuyLabel3.style.display = "block";
+      industryExpertiseInput3.style.display = "block";
+      industryExpertiseLabel3.style.display = "block";
+      startupExperienceInput3.style.display = "block";
+      startupExperienceLabel3.style.display = "block";
+      if (seekingInvestmentYes.checked) {
+        pitchingInput3.style.display = "block";
+        pitchingLabel3.style.display = "block";
+      }
     }
     if (numCofounders == 4) {
-      capitalInput4.style.display = "block";
-      capitalAccessLabel4.style.display = "block";
+      cofounder4NameInput.style.display = "block";
+      cofounder4NameLabel.style.display = "block";
+      ceoLabel4.style.display = "block";
+      ideaLabel4.style.display = "block";
+      ceoInput4.style.display = "block";
+      ideaInput4.style.display = "block";
+      ideasGuyInput4.style.display = "block";
+      ideasGuyLabel4.style.display = "block";
+      industryExpertiseInput4.style.display = "block";
+      industryExpertiseLabel4.style.display = "block";
+      startupExperienceInput4.style.display = "block";
+      startupExperienceLabel4.style.display = "block";
+      if (seekingInvestmentYes.checked) {
+        pitchingInput4.style.display = "block";
+        pitchingLabel4.style.display = "block";
+      }
+    }
+
+    if (seekingInvestmentYes.checked) {
+      if (numCofounders >= 1) {
+        capitalInput1.style.display = "block";
+        capitalAccessLabel1.style.display = "block";
+      }
+      if (numCofounders >= 2) {
+        capitalInput2.style.display = "block";
+        capitalAccessLabel2.style.display = "block";
+      }
+      if (numCofounders >= 3) {
+        capitalInput3.style.display = "block";
+        capitalAccessLabel3.style.display = "block";
+      }
+      if (numCofounders == 4) {
+        capitalInput4.style.display = "block";
+        capitalAccessLabel4.style.display = "block";
+      }
     }
   }
-}
 
 
   var cofounderInputs = document.getElementsByName('numCofounders');
@@ -210,40 +210,37 @@ function showAdditionalInputs(numCofounders) {
   var points = [0, 0, 0, 0];
 
   // Function to show or hide new questions
-function showOrHideNewQuestions() {
-  if (seekingInvestmentYes.checked) {
-    pitchingToInvestorsQuestion.style.display = "block";
-    accessToCapitalQuestion.style.display = "block";
-    if (numCofoundersInput.value >= 3) {
-      pitchingInput3.style.display = "block";
-      pitchingLabel3.style.display = "block";
-      if (numCofoundersInput.value == 4) {
-        pitchingInput4.style.display = "block";
-        pitchingLabel4.style.display = "block";
+  function showOrHideNewQuestions() {
+    if (seekingInvestmentYes.checked) {
+      pitchingToInvestorsQuestion.style.display = "block";
+      accessToCapitalQuestion.style.display = "block";
+      if (numCofoundersInput.value >= 3) {
+        pitchingInput3.style.display = "block";
+        pitchingLabel3.style.display = "block";
+        if (numCofoundersInput.value == 4) {
+          pitchingInput4.style.display = "block";
+          pitchingLabel4.style.display = "block";
+        }
       }
+    } else {
+      pitchingToInvestorsQuestion.style.display = "none";
+      accessToCapitalQuestion.style.display = "none";
+      pitchingInput3.style.display = "none";
+      pitchingLabel3.style.display = "none";
+      pitchingInput4.style.display = "none";
+      pitchingLabel4.style.display = "none";
+      // Reset radio buttons for hidden questions
+      pitchingYes.checked = false;
+      pitchingNo.checked = false;
+      capitalAccessYes.checked = false;
+      capitalAccessNo.checked = false;
     }
-  } else {
-    pitchingToInvestorsQuestion.style.display = "none";
-    accessToCapitalQuestion.style.display = "none";
-    pitchingInput3.style.display = "none";
-    pitchingLabel3.style.display = "none";
-    pitchingInput4.style.display = "none";
-    pitchingLabel4.style.display = "none";
-    // Reset radio buttons for hidden questions
-    pitchingYes.checked = false;
-    pitchingNo.checked = false;
-    capitalAccessYes.checked = false;
-    capitalAccessNo.checked = false;
   }
-}
-
 
   // Event listeners for the 'Seeking Investment' radio buttons
   seekingInvestmentYes.addEventListener('change', showOrHideNewQuestions);
   seekingInvestmentNo.addEventListener('change', showOrHideNewQuestions);
-  numCofoundersInput.addEventListener('change', showOrHideNewQuestions); 
-
-
+  numCofoundersInput.addEventListener('change', showOrHideNewQuestions);
 
   function updateEquitySplits() {
     var totalPoints = points.reduce((a, b) => a + b, 0);
