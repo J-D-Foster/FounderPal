@@ -119,23 +119,23 @@ function showAdditionalInputs(numCofounders) {
       pitchingInput3.style.display = "block";
       pitchingLabel3.style.display = "block";
     }
-    if (numCofounders == 4) {
-      cofounder4NameInput.style.display = "block";
-      cofounder4NameLabel.style.display = "block";
-      ceoLabel4.style.display = "block";
-      ideaLabel4.style.display = "block";
-      ceoInput4.style.display = "block";
-      ideaInput4.style.display = "block";
-      ideasGuyInput4.style.display = "block";
-      ideasGuyLabel4.style.display = "block";
-      industryExpertiseInput4.style.display = "block";
-      industryExpertiseLabel4.style.display = "block";
-      startupExperienceInput4.style.display = "block";
-      startupExperienceLabel4.style.display = "block";
-      if (seekingInvestmentYes.checked) {
-        pitchingInput4.style.display = "block";
-        pitchingLabel4.style.display = "block";
-      }
+  }
+  if (numCofounders == 4) {
+    cofounder4NameInput.style.display = "block";
+    cofounder4NameLabel.style.display = "block";
+    ceoLabel4.style.display = "block";
+    ideaLabel4.style.display = "block";
+    ceoInput4.style.display = "block";
+    ideaInput4.style.display = "block";
+    ideasGuyInput4.style.display = "block";
+    ideasGuyLabel4.style.display = "block";
+    industryExpertiseInput4.style.display = "block";
+    industryExpertiseLabel4.style.display = "block";
+    startupExperienceInput4.style.display = "block";
+    startupExperienceLabel4.style.display = "block";
+    if (seekingInvestmentYes.checked) {
+      pitchingInput4.style.display = "block";
+      pitchingLabel4.style.display = "block";
     }
   }
 
@@ -210,24 +210,40 @@ function showAdditionalInputs(numCofounders) {
   var points = [0, 0, 0, 0];
 
   // Function to show or hide new questions
-  function showOrHideNewQuestions() {
-    if (seekingInvestmentYes.checked) {
-      pitchingToInvestorsQuestion.style.display = "block";
-      accessToCapitalQuestion.style.display = "block";
-    } else {
-      pitchingToInvestorsQuestion.style.display = "none";
-      accessToCapitalQuestion.style.display = "none";
-      // Reset radio buttons for hidden questions
-      pitchingYes.checked = false;
-      pitchingNo.checked = false;
-      capitalAccessYes.checked = false;
-      capitalAccessNo.checked = false;
+function showOrHideNewQuestions() {
+  if (seekingInvestmentYes.checked) {
+    pitchingToInvestorsQuestion.style.display = "block";
+    accessToCapitalQuestion.style.display = "block";
+    if (numCofoundersInput.value >= 3) {
+      pitchingInput3.style.display = "block";
+      pitchingLabel3.style.display = "block";
+      if (numCofoundersInput.value == 4) {
+        pitchingInput4.style.display = "block";
+        pitchingLabel4.style.display = "block";
+      }
     }
+  } else {
+    pitchingToInvestorsQuestion.style.display = "none";
+    accessToCapitalQuestion.style.display = "none";
+    pitchingInput3.style.display = "none";
+    pitchingLabel3.style.display = "none";
+    pitchingInput4.style.display = "none";
+    pitchingLabel4.style.display = "none";
+    // Reset radio buttons for hidden questions
+    pitchingYes.checked = false;
+    pitchingNo.checked = false;
+    capitalAccessYes.checked = false;
+    capitalAccessNo.checked = false;
   }
+}
+
 
   // Event listeners for the 'Seeking Investment' radio buttons
   seekingInvestmentYes.addEventListener('change', showOrHideNewQuestions);
   seekingInvestmentNo.addEventListener('change', showOrHideNewQuestions);
+  numCofoundersInput.addEventListener('change', showOrHideNewQuestions); 
+
+
 
   function updateEquitySplits() {
     var totalPoints = points.reduce((a, b) => a + b, 0);
