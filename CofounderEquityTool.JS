@@ -92,26 +92,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function hideAllAdditionalInputs() {
   var additionalInputs = [
-    cofounder3NameInput, cofounder4NameInput,
-    cofounder3NameLabel, cofounder4NameLabel,
-    ceoLabel3, ceoLabel4,
-    ideaLabel3, ideaLabel4,
-    ceoInput3, ceoInput4,
-    ideaInput3, ideaInput4,
-    ideasGuyInput3, ideasGuyInput4,
-    ideasGuyLabel3, ideasGuyLabel4,
-    industryExpertiseInput3, industryExpertiseInput4,
-    industryExpertiseLabel3, industryExpertiseLabel4,
-    startupExperienceInput3, startupExperienceInput4,
+    cofounder3NameInput, cofounder4NameInput, 
+    cofounder3NameLabel, cofounder4NameLabel, 
+    ceoLabel3, ceoLabel4, 
+    ideaLabel3, ideaLabel4, 
+    ceoInput3, ceoInput4, 
+    ideaInput3, ideaInput4, 
+    ideasGuyInput3, ideasGuyInput4, 
+    ideasGuyLabel3, ideasGuyLabel4, 
+    industryExpertiseInput3, industryExpertiseInput4, 
+    industryExpertiseLabel3, industryExpertiseLabel4, 
+    startupExperienceInput3, startupExperienceInput4, 
     startupExperienceLabel3, startupExperienceLabel4,
-    pitchingInput3, pitchingInput4,
+    pitchingInput3, pitchingInput4, 
     pitchingLabel3, pitchingLabel4,
-    capitalInput3, capitalInput4,
+    capitalInput3, capitalInput4, 
     capitalAccessLabel3, capitalAccessLabel4
   ];
+
   additionalInputs.forEach(function(input) {
     input.style.display = "none";
   });
+
+  pitchingInput1.style.display = "none";
+  pitchingLabel1.style.display = "none";
+  capitalInput1.style.display = "none";
+  capitalAccessLabel1.style.display = "none";
+  pitchingInput2.style.display = "none";
+  pitchingLabel2.style.display = "none";
+  capitalInput2.style.display = "none";
+  capitalAccessLabel2.style.display = "none";
 }
 
 function showAdditionalInputs(numCofounders) {
@@ -383,6 +393,11 @@ function showAdditionalInputs(numCofounders) {
   seekingInvestmentYes.addEventListener('change', showOrHideNewQuestions);
   seekingInvestmentNo.addEventListener('change', showOrHideNewQuestions);
   numCofoundersInput.addEventListener('change', showOrHideNewQuestions);
+
+function triggerCheckboxEvents() {
+  seekingInvestmentYes.dispatchEvent(new Event('change'));
+  seekingInvestmentNo.dispatchEvent(new Event('change'));
+}
 
   // Initial setup
   showAdditionalInputs(parseInt(numCofoundersInput.value));
