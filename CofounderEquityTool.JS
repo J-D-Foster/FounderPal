@@ -283,19 +283,23 @@ document.addEventListener("DOMContentLoaded", function() {
     var pitchingInput = document.getElementById('PitchingBox');
     var capitalAccessInput = document.getElementById('CapitalAccessBox');
 
-    pitchingLabel.style.display = (numCofounders > 0 && seekingInvestment) ? 'block' : 'none';
-    capitalAccessLabel.style.display = (numCofounders > 0 && seekingInvestment) ? 'block' : 'none';
-    pitchingInput.style.display = (numCofounders > 0 && seekingInvestment) ? 'block' : 'none';
-    capitalAccessInput.style.display = (numCofounders > 0 && seekingInvestment) ? 'block' : 'none';
+    if (pitchingLabel && capitalAccessLabel && pitchingInput && capitalAccessInput) {
+      pitchingLabel.style.display = (numCofounders > 0 && seekingInvestment) ? 'block' : 'none';
+      capitalAccessLabel.style.display = (numCofounders > 0 && seekingInvestment) ? 'block' : 'none';
+      pitchingInput.style.display = (numCofounders > 0 && seekingInvestment) ? 'block' : 'none';
+      capitalAccessInput.style.display = (numCofounders > 0 && seekingInvestment) ? 'block' : 'none';
+    }
   }
+
+ // Event listeners for seeking investment and num cofounders
+  seekingInvestmentYes.addEventListener('change', showOrHidePitchingAndCapitalAccess);
+  seekingInvestmentNo.addEventListener('change', showOrHidePitchingAndCapitalAccess);
+  numCofoundersInput.addEventListener('change', showOrHidePitchingAndCapitalAccess);
+
 
   // Trigger the initial display
   showOrHidePitchingAndCapitalAccess();
 
-  // Event listeners
-  seekingInvestmentYes.addEventListener('change', showOrHidePitchingAndCapitalAccess);
-  seekingInvestmentNo.addEventListener('change', showOrHidePitchingAndCapitalAccess);
-  numCofoundersInput.addEventListener('change', showOrHidePitchingAndCapitalAccess);
 
   // Trigger the initial display
   showAdditionalInputs(parseInt(numCofoundersInput.value));
