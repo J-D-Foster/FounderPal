@@ -291,10 +291,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+console.log(numCofoundersInput);
+// numCofoundersInput.addEventListener('change', showOrHidePitchingAndCapitalAccess);
+
 // Event listeners for seeking investment and num cofounders
 seekingInvestmentYes.addEventListener('change', showOrHidePitchingAndCapitalAccess);
 seekingInvestmentNo.addEventListener('change', showOrHidePitchingAndCapitalAccess);
-
 
 var seekingInvestmentYesInput = document.getElementById('SeekingInvestmentRadioYes');
 console.log(seekingInvestmentYesInput); // Add this line
