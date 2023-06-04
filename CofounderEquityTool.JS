@@ -85,11 +85,6 @@ document.addEventListener("DOMContentLoaded", function() {
   var pitchingToInvestorsQuestion = document.getElementById('InvestorsPitchQuestion');
   var accessToCapitalQuestion = document.getElementById('CapitalAccessQuestion');
 
-  var pitchingYes = document.getElementById('PitchingBoxYes');
-  var pitchingNo = document.getElementById('PitchingBoxNo');
-  var capitalAccessYes = document.getElementById('CapitalAccessBoxYes');
-  var capitalAccessNo = document.getElementById('CapitalAccessBoxNo');
-
   seekingInvestmentYes.addEventListener('change', showOrHideNewQuestions);
   seekingInvestmentNo.addEventListener('change', showOrHideNewQuestions);
 
@@ -207,10 +202,6 @@ document.addEventListener("DOMContentLoaded", function() {
       pitchingLabel3.style.display = "none";
       pitchingInput4.style.display = "none";
       pitchingLabel4.style.display = "none";
-      pitchingYes.checked = false;
-      pitchingNo.checked = false;
-      capitalAccessYes.checked = false;
-      capitalAccessNo.checked = false;
       capitalInput1.style.display = "none";
       capitalAccessLabel1.style.display = "none";
       capitalInput2.style.display = "none";
