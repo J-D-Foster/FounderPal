@@ -176,6 +176,7 @@ function showAdditionalInputs(numCofounders) {
     industryExpertiseInput4.style.display = "block";
     industryExpertiseLabel4.style.display = "block";
   }
+}
   
 function showOrHideNewQuestions() {
   if (seekingInvestmentYes.checked) {
