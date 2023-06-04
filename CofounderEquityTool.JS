@@ -1,6 +1,6 @@
 console.log("Script loaded");
 document.addEventListener("DOMContentLoaded", function() {
-  var numCofoundersInput = document.getElementById('NumCofounders');
+  var numCofoundersInput = document.querySelector('input[name="numCofounders"]:checked');
   var cofounder1NameInput = document.getElementById('Cofounder1-Name');
   var cofounder2NameInput = document.getElementById('Cofounder2-Name');
   var cofounder3NameInput = document.getElementById('Cofounder3-Name');
@@ -181,25 +181,22 @@ function showAdditionalInputs(numCofounders) {
     if (numCofounders >= 1) {
       pitchingInput1.style.display = "block";
       pitchingLabel1.style.display = "block";
-      if (numCofounders >= 2) {
-        capitalInput1.style.display = "block";
-        capitalAccessLabel1.style.display = "block";
+      capitalInput1.style.display = "block";
+      capitalAccessLabel1.style.display = "block";
       }
     }
     if (numCofounders >= 2) {
       pitchingInput2.style.display = "block";
       pitchingLabel2.style.display = "block";
-      if (numCofounders >= 3) {
-        capitalInput2.style.display = "block";
-        capitalAccessLabel2.style.display = "block";
+      capitalInput2.style.display = "block";
+      capitalAccessLabel2.style.display = "block";
       }
     }
     if (numCofounders >= 3) {
       pitchingInput3.style.display = "block";
       pitchingLabel3.style.display = "block";
-      if (numCofounders == 4) {
-        capitalInput3.style.display = "block";
-        capitalAccessLabel3.style.display = "block";
+      capitalInput3.style.display = "block";
+      capitalAccessLabel3.style.display = "block";
       }
     }
     if (numCofounders == 4) {
