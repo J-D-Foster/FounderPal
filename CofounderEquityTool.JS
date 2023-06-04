@@ -164,10 +164,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  function showOrHideNewQuestions() {
-    if (seekingInvestmentYes.checked) {
-      pitchingToInvestorsQuestion.style.display = "block";
-      accessToCapitalQuestion.style.display = "block";
+function showOrHideNewQuestions() {
+  var numCofoundersInput = document.querySelector('input[name="numCofounders"]:checked');
+
+  if (seekingInvestmentYes.checked) {
+    pitchingToInvestorsQuestion.style.display = "block";
+    accessToCapitalQuestion.style.display = "block";
       
     if (numCofoundersInput.value >= 2) {
         capitalInput1.style.display = "block";
