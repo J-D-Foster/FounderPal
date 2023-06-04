@@ -177,35 +177,41 @@ function showAdditionalInputs(numCofounders) {
     industryExpertiseLabel4.style.display = "block";
   }
   
+function showOrHideNewQuestions() {
   if (seekingInvestmentYes.checked) {
-    if (numCofounders >= 1) {
+    pitchingToInvestorsQuestion.style.display = "block";
+    accessToCapitalQuestion.style.display = "block";
+
+    if (numCofoundersInput.value >= 1) {
       pitchingInput1.style.display = "block";
       pitchingLabel1.style.display = "block";
       capitalInput1.style.display = "block";
       capitalAccessLabel1.style.display = "block";
-      }
     }
-    if (numCofounders >= 2) {
+
+    if (numCofoundersInput.value >= 2) {
       pitchingInput2.style.display = "block";
       pitchingLabel2.style.display = "block";
       capitalInput2.style.display = "block";
       capitalAccessLabel2.style.display = "block";
-      }
     }
-    if (numCofounders >= 3) {
+
+    if (numCofoundersInput.value >= 3) {
       pitchingInput3.style.display = "block";
       pitchingLabel3.style.display = "block";
       capitalInput3.style.display = "block";
       capitalAccessLabel3.style.display = "block";
-      }
     }
-    if (numCofounders == 4) {
+
+    if (numCofoundersInput.value == 4) {
       pitchingInput4.style.display = "block";
       pitchingLabel4.style.display = "block";
       capitalInput4.style.display = "block";
       capitalAccessLabel4.style.display = "block";
     }
   } else {
+    pitchingToInvestorsQuestion.style.display = "none";
+    accessToCapitalQuestion.style.display = "none";
     pitchingInput1.style.display = "none";
     pitchingLabel1.style.display = "none";
     capitalInput1.style.display = "none";
@@ -224,7 +230,6 @@ function showAdditionalInputs(numCofounders) {
     capitalAccessLabel4.style.display = "none";
   }
 }
-
 
   var cofounderInputs = document.getElementsByName('numCofounders');
   for (var i = 0; i < cofounderInputs.length; i++) {
